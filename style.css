@@ -32,12 +32,6 @@
 /* сброс стилей по умолчанию */
 body,h1,h2,h3,p,ul,li {
     margin: 0;
-    padding: 0;
-}
-
-h1 {
-    margin-left: 16px;
-    margin-right: 16px;
 }
 
 ul {
@@ -115,6 +109,7 @@ nav {
 
 h1 {
     font-size: 48px;
+    margin: 0 16px;
 }
 
 /* стили для контейнера кроссовок */
@@ -122,7 +117,7 @@ h1 {
     display: flex;
     flex-wrap: wrap;
     gap: 24px;
-    margin: 32px 16px 0;
+    margin: 32px 0 0;
     justify-content: center;
     
 }
@@ -150,7 +145,6 @@ h1 {
     overflow: hidden;
     align-items: center;
     flex-direction: column;
-    margin: 0 16px;
 }
 
 .sneaker-image {
