@@ -15,16 +15,6 @@
     display: swap;
 }
 
-
-/* изменение шапки и футера */
-@media screen and (max-width: 560px) {
-    .header-container, .footer-content {
-        flex-direction: column;
-        align-items: center;
-        gap: 24px;
-    }
-}
-
 * {
     box-sizing: border-box;
 }
@@ -54,6 +44,7 @@ main {
     flex-direction: column;
     align-items: center;
     background: #F1F1F1;
+    
 }
 
 /* стили для хедера(шапки) сайта */
@@ -101,10 +92,11 @@ nav {
     font-weight: 700;
 }
 
-/* стили для  */
+/* стили для основного контента */
 .content {
     margin: 32px 0;
     max-width: 1140px;
+    flex-grow: 1;
 }
 
 h1 {
@@ -135,20 +127,100 @@ h1 {
 }
 
 
-
+/* карточка товара на индивидеальной странице */
 .big-card {
     max-width: 1140px;
     height: 100%;
     display: flex;
     background: white;
-    border-radius: 50px;
+    border-radius: calc(12px + (50 - 12) * ((100vw - 420px) / (1140 - 420)));
     overflow: hidden;
-    align-items: center;
     flex-direction: column;
+    padding: calc(24px + (48 - 24) * ((100vw - 420px) / (1140 - 420))) calc(24px + (48 - 24) * ((100vw - 420px) / (1140 - 420)));
+    margin: 0 16px;
+    gap: 32px;
+}
+/* название короссовок */
+.big-title {
+    color: #121723;
+    font-size: calc(32px + (48 - 32) * ((100vw - 420px) / (1140 - 420)));
+    font-style: normal;
+    font-weight: 400;
+    line-height: 100%;
+}
+/* серия кроссовка */
+.big-subtitle {
+    color: #121723;
+    font-size: calc(20px + (36 - 20) * ((100vw - 420px) / (1140 - 420)));
+    font-style: normal;
+    font-weight: 400;
+    line-height: 100%;
+}
+/* контейнет для описания + информации о цене, материале, дате выхода */
+.down-text {
+    gap: 32px;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    display: flex;
+}
+/* текст описания кроссовка */
+.down-text-left {
+    color: #121723;
+    font-size: calc(16px + (20 - 16) * ((100vw - 340px) / (1140 - 340)));
+    font-style: normal;
+    font-weight: 400;
+    line-height: 28px;
+    width: 50%;
+    flex: 1 1 50%;
+}
+/* регулирование контейнера справа */
+.down-text-right {
+    display: flex;
+    width: 50%;
+    flex-direction: column;
+    flex: 1 1 50%;
+}
+/* заголовок справа */
+.big-parameter-title {
+    padding-bottom: 20px;
+    font-size: calc(24px + (30 - 24) * ((100vw - 420px) / (1140 - 420)));
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    color:#121723;
+}
+
+/* описание цена, материал, дата выхода */
+.big-parameter-subtitle {
+    display: flex;
+    justify-content: space-between;
+    padding: 24px 0;
+    border-bottom: #121723 solid 1px;
+}
+
+/* верхний параметр отдельно, так как черточки накладываются*/
+.big-parameter-subtitle-top {
+    display: flex;
+    justify-content: space-between;
+    padding: 24px 0;
+    border-bottom: #121723 solid 1px;
+    border-top: #121723 solid 1px;
+}
+
+.span {
+    font-size: calc(16px + (20 - 16) * ((100vw - 420px) / (1140 - 420)));
+}
+
+.sneaker-text {
+    display: flex;
+    gap: 24px;
+    flex-direction: column;
+    align-items: flex-start;
 }
 
 .sneaker-image {
     width: 100%;
+    align-items: center;
 }
 
 .sneaker-info {
@@ -174,6 +246,7 @@ footer {
     flex-direction: column;
     align-items: center;
     background: #121723;
+    flex-grow: 0;
 }
 
 /* стили для футера */
@@ -215,4 +288,26 @@ footer .nav-link {
     transition: transform linear 200ms;
     box-shadow: 10px 10px 10px 0px rgba(0, 0, 0, 0.25);
     transform: translate(-10px, -10px);
+}
+
+/* изменение шапки и футера */
+@media screen and (max-width: 560px) {
+    .header-container, .footer-content {
+        flex-direction: column;
+        align-items: center;
+        gap: 24px;
+    }
+    
+}
+
+@media screen and (max-width: 700px) {
+    .down-text {
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+
+    .down-text-left, .down-text-right {
+        width: 100%;
+        flex: 1 1 100%;
+    }
 }
