@@ -63,7 +63,7 @@ header {
     justify-content: space-between;
     width: 100%;
     max-width: 1140px;
-    margin: 24px 16px 24px;
+    margin: 24px 16px;
 }
 
 .logo-link {
@@ -255,7 +255,9 @@ footer {
     justify-content: space-between;
     width: 100%;
     max-width: 1140px;
-    margin: 32px 14px;
+    margin: 32px 0;
+    padding: 0 14px;
+    flex-direction: row;
 }
 
 .footer__logo-link {
